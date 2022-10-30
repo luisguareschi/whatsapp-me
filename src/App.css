@@ -1,0 +1,100 @@
+
+* {
+  background: #f0eff0;
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.titleBar {
+  font-family: sans-serif;
+  color: #f0eff0;
+  justify-content: center;
+  background: #19c0a3;
+  height: 100px;
+  padding: 10px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.Instructions {
+  font-family: sans-serif;
+  color: black;
+  font-weight: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 20px;
+  font-size: 20px;
+}
+
+button {
+  color: white;
+  background: darkslategray;
+  border-radius: 30px;
+  height: 100px;
+  width: 250px;
+  border-width: 0px;
+  font-weight: bold;
+  margin: 0 auto;
+  display: block;
+  font-size: 20px;
+}
+
+input {
+  color: black;
+  background: #ffffff;
+  width: 250px;
+  height: 40px;
+  padding: 20px;
+  border-radius: 15px;
+  border-width: 0px;
+  /*display: flex;*/
+  /*margin: 50px auto 50px;*/
+  font-size: 22px;
+  letter-spacing: 2px;
+  text-align: center;
+}
+
+.country_code_selector {
+  width: 80px;
+  border-width: 0px;
+  background: #ffffff;
+  /*display: block;*/
+  margin-right: 10px;
+  border-radius: 15px;
+  font-size: 19px;
+  color: dimgrey;
+  text-align: center;
+}
+
+.phone-input {
+  display: flex;
+  margin: 50px auto 50px;
+  justify-content: center;
+}
+
+img {
+  width: 20px;
+  height: 20px;
+  background: darkslategray;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.send-icon {
+  background: darkslategray;
+  width: 30px;
+  height: 30px;
+  vertical-align: middle;
+  margin-left: 2px;
+}
+
+.whatsapp-logo {
+  background: #19c0a3;
+  width: 40px;
+  height: 40px;
+  vertical-align: middle;
+  margin-left: 15px;
+}
+
