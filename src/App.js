@@ -10,6 +10,7 @@ import CountryCodeSelector from "./CountryCodeSelector";
 const App =() => {
     const [number, setNumber] = useState();
     const [countryCode, setcountryCode] = useState();
+    const [userCode, setuserCode] = useState('')
     const whatsapp_url = 'https://wa.me/';
     const startClicked = () => {
         let newPageUrl = `${whatsapp_url}+${countryCode}${number}`
@@ -30,6 +31,25 @@ const App =() => {
         }
     }, [countryCode])
 
+    const getCountry = () => {
+        let request = new XMLHttpRequest();
+        request.open('GET', 'https://api.ipdata.co/?api-key=5b03f9f4c02157ead3b935da191ec96621b9082184067a09b62deb8e');
+        request.setRequestHeader('Accept', 'application/json');
+        request.onreadystatechange = function () {
+            if (this.readyState === 4) {
+                let data = JSON.parse(this.responseText)
+                setuserCode(data.calling_code)
+                setcountryCode(data.calling_code)
+            }
+        };
+        request.send();
+    }
+
+    useEffect(()=> {
+        getCountry()
+    }, [])
+
+
     return (
       <div className='App'>
           <div className='titleDiv'>
@@ -38,7 +58,7 @@ const App =() => {
           <h2 className='Instructions'>Enter phone number to open a conversation</h2>
           <div>
               <div className={'phone-input'}>
-                  <CountryCodeSelector getCountryCode={getCountryCode}/>
+                  <CountryCodeSelector getCountryCode={getCountryCode} default_code={userCode}/>
                   <input
                       placeholder='Enter phone number'
                       value={number} onChange={handleInput}

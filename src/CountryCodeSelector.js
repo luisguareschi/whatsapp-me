@@ -2,24 +2,21 @@ import {useState} from "react";
 
 const CountryCodeSelector = (props) => {
     const [code, setCode] = useState(0);
-    const [selectCode, setselectedCode] = useState(code);
 
     const selectHandle = (e) => {
         let val = e.target.value
         setCode(e.target.value)
         if (val === 'Country Code') {
-            setselectedCode(val)
             return
         }
         e.target.value = `+${code}`
-        setselectedCode(val)
         props.getCountryCode(val)
     };
 
     return (
         <>
             <select className={'country_code_selector'} onChange={selectHandle}>
-                <option>Country Code</option>
+                <option value={props.default_code}>{`+${props.default_code}`}</option>
                 <option value="93">Afghanistan +93</option>
                 <option value="358">Aland Islands +358</option>
                 <option value="355">Albania +355</option>
